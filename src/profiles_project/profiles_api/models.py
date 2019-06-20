@@ -54,5 +54,4 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         """Django uses this when it needs to convert objects to a strong."""
-
         return self.email
