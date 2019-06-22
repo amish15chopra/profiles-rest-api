@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
+
 # Create your models here.
 
 class UserProfileManager(BaseUserManager):
@@ -57,7 +58,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-class FeedItem(models.Model):
+class ProfileFeedItem(models.Model):
     """Profile status update."""
 
     user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
@@ -66,4 +67,5 @@ class FeedItem(models.Model):
 
     def __str__(self):
         """Return the model as a string."""
+
         return status_text
